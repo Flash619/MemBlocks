@@ -139,11 +139,15 @@ public class FixedMbQueue<T> : IDisposable, IAsyncDisposable where T : class
 
     public void Dispose()
     {
-        _itemMemory.Dispose();
+          _mutex.Dispose();
+          _metaMemory.Dispose();
+          _itemMemory.Dispose();
     }
 
     public async ValueTask DisposeAsync()
     {
+        _mutex.Dispose();
+        await _metaMemory.DisposeAsync();
         await _itemMemory.DisposeAsync();
     }
 
