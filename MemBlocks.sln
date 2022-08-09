@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemBlocks", "Source\MemBlocks\MemBlocks.csproj", "{619955E4-911A-48A3-AF09-47FED388C351}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemBlocks.Abstractions", "Source\MemBlocks.Abstractions\MemBlocks.Abstractions.csproj", "{59FB6CD2-0C39-4727-818F-F195FF5F2506}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{619955E4-911A-48A3-AF09-47FED388C351}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{619955E4-911A-48A3-AF09-47FED388C351}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{619955E4-911A-48A3-AF09-47FED388C351}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{619955E4-911A-48A3-AF09-47FED388C351}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59FB6CD2-0C39-4727-818F-F195FF5F2506}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59FB6CD2-0C39-4727-818F-F195FF5F2506}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59FB6CD2-0C39-4727-818F-F195FF5F2506}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59FB6CD2-0C39-4727-818F-F195FF5F2506}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
