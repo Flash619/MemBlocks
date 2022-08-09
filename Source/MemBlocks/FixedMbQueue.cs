@@ -94,6 +94,12 @@ public class FixedMbQueue<T> : IDisposable, IAsyncDisposable where T : class
             }
 
             item = _itemMemory.ReadAsync(nextItemMeta.MemoryIndex).GetAwaiter().GetResult();
+
+            if (item == null)
+            {
+                throw new Exception("Expected item but found null.");
+            }
+            
             _itemMemory.DeleteAsync(nextItemMeta.MemoryIndex).GetAwaiter().GetResult();
             meta.Items.Remove(nextItemMeta);
 
@@ -105,6 +111,25 @@ public class FixedMbQueue<T> : IDisposable, IAsyncDisposable where T : class
             WriteMetadata(meta).GetAwaiter().GetResult();
 
             return true;
+        }
+        finally
+        {
+            _mutex.ReleaseMutex();
+        }
+    }
+
+    public async Task Clear()
+    {
+        _mutex.WaitOne();
+
+        try
+        {
+            await _itemMemory.ClearAsync();
+            var meta = await RequireMetadata();
+            
+            meta.Items.Clear();
+
+            await WriteMetadata(meta);
         }
         finally
         {
